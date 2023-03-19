@@ -1,0 +1,14 @@
+fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    // Loop through each country object in the response data
+    data.forEach(country => {
+      // Print the country's name, region, subregion, and population
+      console.log(`Country: ${country.name.common}`);
+      console.log(`Region: ${country.region}`);
+      console.log(`Subregion: ${country.subregion}`);
+      console.log(`Population: ${country.population}`);
+      console.log("---------------------");
+    });
+  })
+  .catch(error => console.error(error));
